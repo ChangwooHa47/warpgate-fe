@@ -5,8 +5,6 @@ import Image from "next/image";
 import { sampleOrders } from "../_data/orders";
 import { formatPrice } from "../_lib/utils";
 
-const BASE_PATH = "/demo/ecommerce";
-
 const statusLabel: Record<string, string> = {
   confirmed: "주문 확인",
   preparing: "상품 준비 중",
@@ -28,7 +26,7 @@ export default function OrdersPage() {
         <div className="text-center py-20">
           <p className="text-muted text-sm mb-4">아직 주문 내역이 없습니다.</p>
           <Link
-            href={`${BASE_PATH}/products`}
+            href="/demo/ecommerce/products"
             className="inline-block text-sm border-b border-line hover:border-primary pb-0.5 text-muted hover:text-primary transition-colors"
           >
             쇼핑하러 가기
@@ -39,7 +37,7 @@ export default function OrdersPage() {
           {sampleOrders.map((order) => (
             <Link
               key={order.id}
-              href={`${BASE_PATH}/orders/${order.id}`}
+              href={`/demo/ecommerce/orders/${order.id}`}
               className="block border border-line hover:border-accent transition-colors p-6"
             >
               <div className="flex items-center justify-between mb-4">

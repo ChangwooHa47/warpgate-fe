@@ -4,8 +4,6 @@ import Link from "next/link";
 import { useCart } from "../../_context/CartContext";
 import { formatPrice } from "../../_lib/utils";
 
-const BASE_PATH = "/demo/ecommerce";
-
 export default function CartSummary() {
   const { totalPrice, totalItems } = useCart();
   const shippingFee = totalPrice >= 50000 ? 0 : 3000;
@@ -39,7 +37,7 @@ export default function CartSummary() {
         </div>
 
         <Link
-          href={`${BASE_PATH}/checkout`}
+          href="/demo/ecommerce/checkout"
           className="block w-full text-center bg-primary text-base py-4 text-sm tracking-wider hover:bg-primary/90 transition-colors"
         >
           주문하기

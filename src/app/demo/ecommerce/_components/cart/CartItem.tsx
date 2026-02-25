@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import type { CartItem as CartItemType } from "../../_lib/types";
+import { CartItem as CartItemType } from "../../_lib/types";
 import { formatPrice } from "../../_lib/utils";
 import { useCart } from "../../_context/CartContext";
 

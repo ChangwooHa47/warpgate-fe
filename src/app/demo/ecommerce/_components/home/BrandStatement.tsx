@@ -1,19 +1,19 @@
 export default function BrandStatement() {
   return (
-    <section className="py-24 md:py-32 px-8">
-      <div className="max-w-2xl mx-auto text-center">
-        <p className="text-[11px] tracking-[0.3em] text-muted uppercase mb-6">
+    <section className="bg-surface">
+      <div className="max-w-[680px] mx-auto px-8 md:px-12 py-32 text-center">
+        <p className="text-[11px] tracking-[0.2em] text-muted uppercase mb-10">
           Our Philosophy
         </p>
-        <h2 className="text-2xl md:text-3xl font-light leading-relaxed mb-8">
-          &ldquo;좋은 물건은 오래 곁에 두고 싶은 것.
-          <br />
-          시간이 지나도 변하지 않는 가치를 담습니다.&rdquo;
-        </h2>
-        <p className="text-sm text-muted leading-loose max-w-lg mx-auto">
-          우리는 유행을 따르지 않습니다. 대신 시간이 증명한 좋은 디자인,
-          지속 가능한 소재, 그리고 정직한 제작 과정에 집중합니다.
-          덜 소비하고, 더 오래 사용하는 삶을 제안합니다.
+        <p className="text-[20px] md:text-[24px] font-extralight leading-[1.6] text-primary mb-8">
+          오래 쓸 수 있는 것,
+          <br className="hidden md:block" />
+          일상에 조용히 스며드는 것만 고릅니다.
+        </p>
+        <p className="text-[13px] text-muted leading-[2] max-w-[440px] mx-auto">
+          오래 쓸 수 있는지, 손에 익숙해지는지,
+          놓아둔 자리에서 튀지 않는지.
+          그 정도가 우리의 기준입니다.
         </p>
       </div>
     </section>

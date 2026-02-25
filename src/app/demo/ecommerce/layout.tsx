@@ -1,35 +1,29 @@
 import type { Metadata } from "next";
-import { Noto_Sans_KR } from "next/font/google";
-import { CartProvider } from "./_context/CartContext";
+import "./ecommerce.css";
 import Header from "./_components/layout/Header";
 import Footer from "./_components/layout/Footer";
-import "./ecommerce.css";
-
-const notoSansKR = Noto_Sans_KR({
-  variable: "--font-noto",
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "700"],
-  display: "swap",
-});
+import { CartProvider } from "./_context/CartContext";
 
 export const metadata: Metadata = {
-  title: {
-    default: "MUJI-inspired Ecommerce",
-    template: "%s | Ecommerce Demo",
-  },
-  description: "Minimal, thoughtful living essentials",
+  title: "ORDINAR — 일상을 위한 선택",
+  description:
+    "매일을 위해 신중하게 고른 라이프스타일 셀렉트숍. Selected with intention for everyday life.",
 };
 
 export default function EcommerceLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode;
-}) {
+}>) {
   return (
-    <div data-demo="ecommerce" className={`${notoSansKR.variable} font-sans`}>
+    <div data-demo="ecommerce">
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"
+      />
       <CartProvider>
         <Header />
-        <main className="min-h-screen pt-16">{children}</main>
+        <main className="min-h-screen">{children}</main>
         <Footer />
       </CartProvider>
     </div>

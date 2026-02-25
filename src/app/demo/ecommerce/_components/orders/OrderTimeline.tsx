@@ -1,4 +1,4 @@
-import type { TimelineEvent } from "../../_lib/types";
+import { TimelineEvent } from "../../_lib/types";
 import { cn } from "../../_lib/utils";
 
 interface OrderTimelineProps {

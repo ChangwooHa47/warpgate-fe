@@ -1,259 +1,313 @@
-import type { Product, Category } from "../_lib/types";
+import { Product } from "../_lib/types";
 
 export const products: Product[] = [
+  // ── Apparel ──
   {
-    id: "organic-cotton-tee",
-    name: "오가닉 코튼 티셔츠",
-    nameEn: "Organic Cotton Tee",
-    category: "apparel",
-    price: 39000,
-    description:
-      "부드럽고 통기성이 좋은 오가닉 코튼 소재. 간결한 실루엣과 릴랙스드 핏으로 일상에서 편안하게 입기 좋습니다.",
-    details: [
-      "100% 오가닉 코튼",
-      "릴랙스드 핏",
-      "크루넥",
-      "세탁기 사용 가능",
-    ],
-    images: [
-      "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=800&h=1000&fit=crop",
-      "https://images.unsplash.com/photo-1529374255404-311a2a4f1fd9?w=800&h=1000&fit=crop",
-    ],
-    variants: [
-      { label: "사이즈", options: ["S", "M", "L", "XL"] },
-      { label: "색상", options: ["화이트", "베이지", "그레이"] },
-    ],
-    stock: "in_stock",
-    isNew: true,
-  },
-  {
-    id: "linen-blend-shirt",
-    name: "린넨 블렌드 셔츠",
-    nameEn: "Linen Blend Shirt",
-    category: "apparel",
-    price: 59000,
-    description:
-      "린넨과 코튼의 조화로운 혼방 소재. 자연스러운 질감과 시원한 착용감이 특징입니다.",
-    details: ["55% 린넨, 45% 코튼", "레귤러 핏", "버튼 프런트", "드라이클리닝 권장"],
-    images: [
-      "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=800&h=1000&fit=crop",
-    ],
-    variants: [
-      { label: "사이즈", options: ["S", "M", "L"] },
-      { label: "색상", options: ["아이보리", "스카이블루"] },
-    ],
-    stock: "in_stock",
-  },
-  {
-    id: "merino-cardigan",
-    name: "메리노 울 가디건",
-    nameEn: "Merino Wool Cardigan",
+    id: "merino-crew",
+    name: "메리노 울 크루넥",
+    nameEn: "Merino Wool Crewneck",
     category: "apparel",
     price: 89000,
     description:
-      "엄선된 메리노 울로 제작된 가디건. 가볍고 따뜻하며, 계절 간 활용도가 높습니다.",
+      "입을수록 몸에 맞아가는 니트. 계절이 바뀌어도 자꾸 손이 갑니다.",
     details: [
-      "100% 엑스트라파인 메리노 울",
-      "V넥 디자인",
-      "5버튼 클로저",
+      "100% 호주산 메리노 울",
+      "홀가먼트 무봉제 니팅",
+      "사계절 착용 가능한 게이지",
       "핸드워시 권장",
     ],
     images: [
-      "https://images.unsplash.com/photo-1434389677669-e08b4cac3105?w=800&h=1000&fit=crop",
+      "https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?w=800&q=80",
+      "https://images.unsplash.com/photo-1578587018452-892bacefd3f2?w=800&q=80",
     ],
     variants: [
+      { label: "컬러", options: ["아이보리", "차콜", "카멜"] },
       { label: "사이즈", options: ["S", "M", "L"] },
-      { label: "색상", options: ["네이비", "카멜", "차콜"] },
     ],
-    stock: "low_stock",
+    stock: "in_stock",
   },
   {
-    id: "ceramic-vase-medium",
-    name: "세라믹 화병 M",
-    nameEn: "Ceramic Vase Medium",
-    category: "home",
-    price: 45000,
+    id: "cotton-tee",
+    name: "수피마 코튼 티셔츠",
+    nameEn: "Supima Cotton T-Shirt",
+    category: "apparel",
+    price: 39000,
     description:
-      "손으로 빚은 세라믹 화병. 미세한 질감과 자연스러운 형태가 공간에 차분한 분위기를 더합니다.",
-    details: ["핸드메이드 세라믹", "높이 18cm", "방수 코팅", "물 사용 가능"],
+      "매일 입는 거라 더 까다롭게 골랐습니다. 빨아도 늘어나지 않는 티.",
+    details: [
+      "80수 수피마 코튼",
+      "세미 오버핏 실루엣",
+      "이중 바인딩 넥라인",
+      "머신워시 가능",
+    ],
     images: [
-      "https://images.unsplash.com/photo-1578500494198-246f612d3b3d?w=800&h=1000&fit=crop",
+      "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=800&q=80",
+      "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=800&q=80",
+    ],
+    variants: [
+      { label: "컬러", options: ["화이트", "블랙", "그레이", "네이비"] },
+      { label: "사이즈", options: ["S", "M", "L", "XL"] },
+    ],
+    stock: "in_stock",
+  },
+  {
+    id: "linen-shirt",
+    name: "워싱 리넨 셔츠",
+    nameEn: "Washed Linen Shirt",
+    category: "apparel",
+    price: 78000,
+    description:
+      "빨래할수록 부드러워지는 셔츠. 여름엔 한 장으로, 봄가을엔 걸쳐서.",
+    details: [
+      "100% 유럽산 리넨",
+      "워싱 가공으로 부드러운 촉감",
+      "릴랙스드 레귤러 핏",
+      "저온 세탁 권장",
+    ],
+    images: [
+      "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=800&q=80",
+      "https://images.unsplash.com/photo-1598033129183-c4f50c736c10?w=800&q=80",
+    ],
+    variants: [
+      { label: "컬러", options: ["화이트", "베이지", "스카이"] },
+      { label: "사이즈", options: ["S", "M", "L"] },
     ],
     stock: "in_stock",
     isNew: true,
   },
   {
-    id: "linen-bedding-set",
-    name: "린넨 침구 세트",
-    nameEn: "Linen Bedding Set",
-    category: "home",
-    price: 189000,
+    id: "cashmere-muffler",
+    name: "캐시미어 머플러",
+    nameEn: "Cashmere Muffler",
+    category: "apparel",
+    price: 115000,
     description:
-      "프랑스산 린넨으로 제작된 침구 세트. 사용할수록 부드러워지며 사계절 쾌적하게 사용할 수 있습니다.",
+      "한번 만져보면 알게 됩니다. 쌀쌀한 날이면 자꾸 찾게 되는 머플러.",
     details: [
-      "100% 프렌치 린넨",
-      "이불커버 + 베개커버 2장",
-      "퀸 사이즈 (170x210cm)",
-      "스톤워싱 가공",
+      "100% 몽골산 캐시미어",
+      "사이즈 180 × 35cm",
+      "손세탁 후 자연 건조",
+      "개체마다 미세한 색상 차이 가능",
     ],
     images: [
-      "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=800&h=1000&fit=crop",
+      "https://images.unsplash.com/photo-1520903920243-00d872a2d1c9?w=800&q=80",
+      "https://images.unsplash.com/photo-1601924994987-69e26d50dc26?w=800&q=80",
     ],
-    variants: [{ label: "색상", options: ["내추럴", "화이트", "그레이"] }],
-    stock: "in_stock",
+    variants: [
+      { label: "컬러", options: ["라이트 그레이", "카멜", "블랙"] },
+    ],
+    stock: "low_stock",
   },
+
+  // ── Home ──
   {
-    id: "aromatic-candle",
-    name: "아로마틱 캔들",
-    nameEn: "Aromatic Candle",
+    id: "ceramic-mug",
+    name: "핸드메이드 세라믹 머그",
+    nameEn: "Handmade Ceramic Mug",
     category: "home",
     price: 32000,
     description:
-      "소이 왁스와 천연 에센셜 오일로 만든 캔들. 은은한 향이 공간을 편안하게 채웁니다.",
+      "쥐었을 때 손에 맞는 곡선. 아침 커피가 조금 더 좋아지는 머그.",
     details: [
-      "100% 소이 왁스",
-      "천연 에센셜 오일",
-      "연소시간 약 40시간",
-      "핸드메이드",
+      "도예가 수작업 제작",
+      "약 300ml 용량",
+      "전자레인지 · 식기세척기 사용 가능",
+      "개체마다 미세한 차이가 있습니다",
     ],
     images: [
-      "https://images.unsplash.com/photo-1602607950151-cf17cb8a51c4?w=800&h=1000&fit=crop",
+      "https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?w=800&q=80",
+      "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=80",
     ],
-    variants: [{ label: "향", options: ["세이지", "유칼립투스", "라벤더"] }],
-    stock: "in_stock",
+    variants: [{ label: "컬러", options: ["내추럴", "크림", "차콜"] }],
+    stock: "low_stock",
   },
   {
-    id: "wooden-desk-organizer",
-    name: "우드 데스크 오거나이저",
-    nameEn: "Wooden Desk Organizer",
-    category: "desk",
-    price: 48000,
+    id: "linen-blanket",
+    name: "프렌치 리넨 블랭킷",
+    nameEn: "French Linen Blanket",
+    category: "home",
+    price: 128000,
     description:
-      "호두나무로 제작된 데스크 오거나이저. 미니멀한 디자인으로 책상 위를 정돈해 줍니다.",
-    details: ["천연 호두나무", "3개 수납공간", "오일 마감", "사이즈 25x12x8cm"],
-    images: [
-      "https://images.unsplash.com/photo-1544816155-12df9643f363?w=800&h=1000&fit=crop",
+      "쓸수록 부드러워지는 리넨. 소파에, 침대에, 어디든 걸쳐두게 됩니다.",
+    details: [
+      "100% 프랑스산 리넨",
+      "사이즈 150 × 200cm",
+      "워싱 가공 처리",
+      "울 드라이클리닝 또는 저온 세탁",
     ],
-    stock: "in_stock",
-  },
-  {
-    id: "brass-pen-holder",
-    name: "브라스 펜홀더",
-    nameEn: "Brass Pen Holder",
-    category: "desk",
-    price: 28000,
-    description:
-      "황동 소재의 펜홀더. 시간이 지나며 자연스럽게 변화하는 색감이 매력적입니다.",
-    details: ["솔리드 브라스", "직경 4cm, 높이 10cm", "에이징 효과", "무광 마감"],
     images: [
-      "https://images.unsplash.com/photo-1583485088034-697b5bc54ccd?w=800&h=1000&fit=crop",
+      "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&q=80",
+      "https://images.unsplash.com/photo-1616627547584-bf28cee262db?w=800&q=80",
     ],
-    stock: "in_stock",
-  },
-  {
-    id: "recycled-notebook",
-    name: "리사이클 노트북",
-    nameEn: "Recycled Notebook",
-    category: "desk",
-    price: 15000,
-    description:
-      "재생지로 만든 친환경 노트북. 부드러운 필기감과 견고한 제본이 특징입니다.",
-    details: ["100% 재생지", "96페이지", "A5 사이즈", "실 제본"],
-    images: [
-      "https://images.unsplash.com/photo-1531346878377-a5be20888e57?w=800&h=1000&fit=crop",
+    variants: [
+      { label: "컬러", options: ["오트밀", "포그 그레이", "더스티 로즈"] },
     ],
-    variants: [{ label: "색상", options: ["네이비", "그레이", "크라프트"] }],
     stock: "in_stock",
     isNew: true,
   },
   {
-    id: "herbal-tea-set",
-    name: "허브티 세트",
-    nameEn: "Herbal Tea Set",
-    category: "wellness",
-    price: 35000,
+    id: "cotton-towel",
+    name: "오가닉 코튼 타올 세트",
+    nameEn: "Organic Cotton Towel Set",
+    category: "home",
+    price: 48000,
     description:
-      "엄선된 유기농 허브로 블렌딩한 티 세트. 일상에서 작은 여유를 선사합니다.",
+      "매일 피부에 닿는 거라 소재가 중요합니다. 부드럽고 잘 마르는 타올.",
     details: [
-      "유기농 허브 100%",
-      "3종 구성 (캐모마일, 페퍼민트, 루이보스)",
-      "각 20티백",
-      "개별 포장",
+      "GOTS 인증 유기농 면",
+      "페이스 타올 2장 + 핸드 타올 2장",
+      "이중 루프 직조",
+      "머신워시 가능",
     ],
     images: [
-      "https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?w=800&h=1000&fit=crop",
+      "https://images.unsplash.com/photo-1600369672770-985fd30004eb?w=800&q=80",
+      "https://images.unsplash.com/photo-1583845112239-97ef1341b271?w=800&q=80",
+    ],
+    variants: [{ label: "컬러", options: ["화이트", "라이트 그레이", "베이지"] }],
+    stock: "in_stock",
+  },
+
+  // ── Desk ──
+  {
+    id: "brass-penstand",
+    name: "솔리드 브라스 펜 스탠드",
+    nameEn: "Solid Brass Pen Stand",
+    category: "desk",
+    price: 45000,
+    description:
+      "쓰다 보면 색이 변합니다. 그게 황동의 매력이에요.",
+    details: [
+      "무구 황동 소재",
+      "무게감 있는 안정적 구조",
+      "시간 경과에 따른 자연 패티나",
+      "펜 1–2자루 수납",
+    ],
+    images: [
+      "https://images.unsplash.com/photo-1583485088034-697b5bc54ccd?w=800&q=80",
+      "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=800&q=80",
     ],
     stock: "in_stock",
   },
   {
-    id: "essential-oil-diffuser",
-    name: "에센셜 오일 디퓨저",
-    nameEn: "Essential Oil Diffuser",
-    category: "wellness",
-    price: 55000,
+    id: "leather-tray",
+    name: "베지터블 레더 트레이",
+    nameEn: "Vegetable Leather Tray",
+    category: "desk",
+    price: 58000,
     description:
-      "세라믹 소재의 아로마 디퓨저. 초음파 방식으로 은은하게 향을 퍼뜨립니다.",
+      "열쇠, 동전, 카드. 자잘한 것들 놓아두기 좋은 트레이. 가죽이 익을수록 색이 깊어져요.",
     details: [
-      "세라믹 외관",
-      "초음파 방식",
-      "용량 150ml",
-      "자동 꺼짐 기능",
-      "무드등 기능",
+      "이탈리아산 베지터블 탄닝 가죽",
+      "수작업 스티칭",
+      "사이즈 20 × 15cm",
+      "에이징에 따른 색상 변화",
     ],
     images: [
-      "https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=800&h=1000&fit=crop",
+      "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=800&q=80",
+      "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=800&q=80",
+    ],
+    variants: [{ label: "컬러", options: ["내추럴", "다크 브라운"] }],
+    stock: "in_stock",
+    isNew: true,
+  },
+  {
+    id: "walnut-stand",
+    name: "월넛 노트북 스탠드",
+    nameEn: "Walnut Laptop Stand",
+    category: "desk",
+    price: 72000,
+    description:
+      "나뭇결이 하나하나 다릅니다. 각도 하나로 책상 위가 달라져요.",
+    details: [
+      "북미산 블랙 월넛 원목",
+      "인체공학적 15도 각도",
+      "15인치 노트북까지 호환",
+      "천연 오일 마감",
+    ],
+    images: [
+      "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=800&q=80",
+      "https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=800&q=80",
+    ],
+    stock: "in_stock",
+  },
+
+  // ── Wellness ──
+  {
+    id: "hinoki-diffuser",
+    name: "히노키 디퓨저",
+    nameEn: "Hinoki Wood Diffuser",
+    category: "wellness",
+    price: 52000,
+    description:
+      "편백나무 향이 은은하게 퍼집니다. 공간이 달라지는 걸 느낄 수 있어요.",
+    details: [
+      "일본산 히노키 에센셜 오일",
+      "200ml 용량 (약 2개월 사용)",
+      "리드 스틱 5개 포함",
+      "파라벤 · 프탈레이트 무첨가",
+    ],
+    images: [
+      "https://images.unsplash.com/photo-1602928321679-560bb453f190?w=800&q=80",
+      "https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=800&q=80",
     ],
     stock: "in_stock",
   },
   {
-    id: "meditation-cushion",
-    name: "명상 쿠션",
-    nameEn: "Meditation Cushion",
+    id: "soy-candle",
+    name: "소이 캔들 — 이른 아침",
+    nameEn: "Soy Candle — Early Morning",
     category: "wellness",
-    price: 68000,
+    price: 28000,
     description:
-      "메밀 껍질을 채운 명상 쿠션. 안정적인 자세를 유지할 수 있도록 설계되었습니다.",
+      "유칼립투스와 화이트 티 블렌딩. 가볍고 맑은 향이 오래 남아요.",
     details: [
-      "겉감: 오가닉 코튼",
-      "내용물: 메밀 껍질",
-      "직경 33cm, 높이 15cm",
-      "커버 분리 세탁 가능",
+      "100% 천연 소이왁스",
+      "180g (약 40시간 연소)",
+      "면 심지 사용",
+      "유칼립투스 · 화이트 티 블렌딩",
     ],
     images: [
-      "https://images.unsplash.com/photo-1545205597-3d9d02c29597?w=800&h=1000&fit=crop",
-    ],
-    variants: [{ label: "색상", options: ["차콜", "세이지", "테라코타"] }],
-    stock: "low_stock",
-  },
-  {
-    id: "cotton-slippers",
-    name: "코튼 슬리퍼",
-    nameEn: "Cotton Slippers",
-    category: "wellness",
-    price: 25000,
-    description:
-      "부드러운 코튼 소재의 실내 슬리퍼. 가볍고 통기성이 좋아 사계절 착용이 가능합니다.",
-    details: [
-      "겉감: 100% 코튼",
-      "안감: 테리 코튼",
-      "논슬립 고무 밑창",
-      "세탁기 사용 가능",
-    ],
-    images: [
-      "https://images.unsplash.com/photo-1631125915902-d8abe9225ff2?w=800&h=1000&fit=crop",
-    ],
-    variants: [
-      { label: "사이즈", options: ["S (230-240)", "M (250-260)", "L (270-280)"] },
+      "https://images.unsplash.com/photo-1572726729207-a78d6feb18d7?w=800&q=80",
+      "https://images.unsplash.com/photo-1603006905003-be475563bc59?w=800&q=80",
     ],
     stock: "in_stock",
   },
+  {
+    id: "body-oil",
+    name: "보타니컬 바디 오일",
+    nameEn: "Botanical Body Oil",
+    category: "wellness",
+    price: 38000,
+    description:
+      "샤워 후 바르면 금방 스며듭니다. 끈적이지 않고 가벼운 오일.",
+    details: [
+      "호호바 · 아르간 · 로즈힙 블렌딩",
+      "100ml 용량",
+      "합성 향료 무첨가",
+      "EWG 그린 등급 원료",
+    ],
+    images: [
+      "https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=800&q=80",
+      "https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=800&q=80",
+    ],
+    stock: "in_stock",
+    isNew: true,
+  },
+];
+
+export const categories: { key: string; label: string; labelEn: string }[] = [
+  { key: "all", label: "전체", labelEn: "All" },
+  { key: "apparel", label: "의류", labelEn: "Apparel" },
+  { key: "home", label: "홈", labelEn: "Home" },
+  { key: "desk", label: "데스크", labelEn: "Desk" },
+  { key: "wellness", label: "웰니스", labelEn: "Wellness" },
 ];
 
 export function getProduct(id: string): Product | undefined {
   return products.find((p) => p.id === id);
 }
 
-export function getProductsByCategory(category?: Category): Product[] {
-  if (!category) return products;
+export function getProductsByCategory(category: string): Product[] {
+  if (category === "all") return products;
   return products.filter((p) => p.category === category);
 }

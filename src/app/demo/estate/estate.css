@@ -1,191 +1,55 @@
-/* Estate Demo - Scoped Design System */
-/* Korean Real Estate Platform */
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #1a1a1a;
+  --primary: #2563eb;
+  --primary-dark: #1d4ed8;
+  --accent: #f97316;
+  --muted: #6b7280;
+  --border: #e5e7eb;
+  --card: #f9fafb;
+  --font-pretendard: "Pretendard Variable", Pretendard, -apple-system,
+    BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI",
+    "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic",
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-dark: var(--primary-dark);
+  --color-accent: var(--accent);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-card: var(--card);
+  --font-sans: var(--font-pretendard);
+}
 
 [data-demo="estate"] {
-  /* Color Palette */
-  --color-background: #ffffff;
-  --color-foreground: #1a1a1a;
-  --color-primary: #2563eb;
-  --color-primary-dark: #1d4ed8;
-  --color-accent: #f97316;
-  --color-muted: #6b7280;
-  --color-border: #e5e7eb;
-  --color-card: #f9fafb;
-
-  /* Typography */
-  --font-sans: var(--font-noto), "Noto Sans KR", -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", sans-serif;
-
-  /* Apply base styles */
-  font-family: var(--font-sans);
-  background-color: var(--color-background);
-  color: var(--color-foreground);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-pretendard);
 }
 
-/* Tailwind v4 @theme inline equivalent */
-@layer base {
-  [data-demo="estate"] {
-    --tw-color-background: var(--color-background);
-    --tw-color-foreground: var(--color-foreground);
-    --tw-color-primary: var(--color-primary);
-    --tw-color-primary-dark: var(--color-primary-dark);
-    --tw-color-accent: var(--color-accent);
-    --tw-color-muted: var(--color-muted);
-    --tw-color-border: var(--color-border);
-    --tw-color-card: var(--color-card);
-  }
+/* Scrollbar */
+[data-demo="estate"] ::-webkit-scrollbar {
+  width: 6px;
+}
+[data-demo="estate"] ::-webkit-scrollbar-track {
+  background: transparent;
+}
+[data-demo="estate"] ::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 3px;
+}
+[data-demo="estate"] ::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af;
 }
 
-/* Background utilities */
-[data-demo="estate"] .bg-background {
-  background-color: var(--color-background);
-}
-
-[data-demo="estate"] .bg-foreground {
-  background-color: var(--color-foreground);
-}
-
-[data-demo="estate"] .bg-primary {
-  background-color: var(--color-primary);
-}
-
-[data-demo="estate"] .bg-primary-dark {
-  background-color: var(--color-primary-dark);
-}
-
-[data-demo="estate"] .bg-accent {
-  background-color: var(--color-accent);
-}
-
-[data-demo="estate"] .bg-muted {
-  background-color: var(--color-muted);
-}
-
-[data-demo="estate"] .bg-border {
-  background-color: var(--color-border);
-}
-
-[data-demo="estate"] .bg-card {
-  background-color: var(--color-card);
-}
-
-/* Text utilities */
-[data-demo="estate"] .text-background {
-  color: var(--color-background);
-}
-
-[data-demo="estate"] .text-foreground {
-  color: var(--color-foreground);
-}
-
-[data-demo="estate"] .text-primary {
-  color: var(--color-primary);
-}
-
-[data-demo="estate"] .text-primary-dark {
-  color: var(--color-primary-dark);
-}
-
-[data-demo="estate"] .text-accent {
-  color: var(--color-accent);
-}
-
-[data-demo="estate"] .text-muted {
-  color: var(--color-muted);
-}
-
-/* Border utilities */
-[data-demo="estate"] .border-border {
-  border-color: var(--color-border);
-}
-
-[data-demo="estate"] .border-primary {
-  border-color: var(--color-primary);
-}
-
-[data-demo="estate"] .border-accent {
-  border-color: var(--color-accent);
-}
-
-/* Hover states */
-[data-demo="estate"] .hover\:bg-primary:hover {
-  background-color: var(--color-primary);
-}
-
-[data-demo="estate"] .hover\:bg-primary-dark:hover {
-  background-color: var(--color-primary-dark);
-}
-
-[data-demo="estate"] .hover\:text-primary:hover {
-  color: var(--color-primary);
-}
-
-[data-demo="estate"] .hover\:text-accent:hover {
-  color: var(--color-accent);
-}
-
-[data-demo="estate"] .hover\:border-primary:hover {
-  border-color: var(--color-primary);
-}
-
-/* Focus states */
-[data-demo="estate"] .focus\:border-primary:focus {
-  border-color: var(--color-primary);
-}
-
-[data-demo="estate"] .focus\:ring-primary:focus {
-  --tw-ring-color: var(--color-primary);
-}
-
-/* Ring utilities */
-[data-demo="estate"] .ring-primary {
-  --tw-ring-color: var(--color-primary);
-}
-
-/* Divide utilities */
-[data-demo="estate"] .divide-border > * + * {
-  border-color: var(--color-border);
-}
-
-/* Property type badge colors */
-[data-demo="estate"] .badge-sale {
-  background-color: #dbeafe;
-  color: #1d4ed8;
-}
-
-[data-demo="estate"] .badge-jeonse {
-  background-color: #dcfce7;
-  color: #16a34a;
-}
-
-[data-demo="estate"] .badge-monthly {
-  background-color: #fef3c7;
-  color: #d97706;
-}
-
-/* Category colors */
-[data-demo="estate"] .category-apartment {
-  background-color: #eff6ff;
-  color: #2563eb;
-}
-
-[data-demo="estate"] .category-villa {
-  background-color: #f0fdf4;
-  color: #16a34a;
-}
-
-[data-demo="estate"] .category-oneroom {
-  background-color: #fefce8;
-  color: #ca8a04;
-}
-
-[data-demo="estate"] .category-officetel {
-  background-color: #faf5ff;
-  color: #9333ea;
-}
-
-[data-demo="estate"] .category-commercial {
-  background-color: #fff7ed;
-  color: #ea580c;
+/* Kakao Map container */
+[data-demo="estate"] .kakao-map-container {
+  width: 100%;
+  height: 100%;
 }

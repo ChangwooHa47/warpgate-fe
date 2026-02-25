@@ -35,10 +35,14 @@ export interface Order {
   createdAt: string;
 }
 
-export type OrderStatus = "confirmed" | "preparing" | "shipping" | "delivered";
+export type OrderStatus =
+  | "confirmed"
+  | "preparing"
+  | "shipping"
+  | "delivered";
 
 export interface TimelineEvent {
-  status: string;
+  status: OrderStatus;
   label: string;
   description: string;
   date: string;

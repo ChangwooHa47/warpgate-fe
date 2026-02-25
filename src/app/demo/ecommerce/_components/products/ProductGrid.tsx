@@ -1,51 +1,44 @@
 "use client";
 
 import { useState } from "react";
-import { products, getProductsByCategory } from "../../_data/products";
-import type { Category } from "../../_lib/types";
-import { cn } from "../../_lib/utils";
+import { categories, getProductsByCategory } from "../../_data/products";
 import ProductCard from "./ProductCard";
-
-const categories: { key: Category | "all"; label: string }[] = [
-  { key: "all", label: "전체" },
-  { key: "apparel", label: "의류" },
-  { key: "home", label: "홈" },
-  { key: "desk", label: "데스크" },
-  { key: "wellness", label: "웰니스" },
-];
+import { cn } from "../../_lib/utils";
 
 export default function ProductGrid() {
-  const [activeCategory, setActiveCategory] = useState<Category | "all">("all");
-
-  const filtered =
-    activeCategory === "all" ? products : getProductsByCategory(activeCategory);
+  const [activeCategory, setActiveCategory] = useState("all");
+  const filtered = getProductsByCategory(activeCategory);
 
   return (
     <div>
-      {/* Category Filter */}
-      <div className="flex gap-6 mb-10 border-b border-line pb-4">
+      <div className="flex gap-6 mb-12">
         {categories.map((cat) => (
           <button
             key={cat.key}
             onClick={() => setActiveCategory(cat.key)}
             className={cn(
-              "text-sm transition-colors pb-2 -mb-[17px]",
+              "text-sm pb-1 transition-colors duration-300 border-b",
               activeCategory === cat.key
-                ? "text-primary border-b border-primary"
-                : "text-muted hover:text-primary"
+                ? "text-primary border-primary"
+                : "text-muted border-transparent hover:text-primary"
             )}
           >
-            {cat.label}
+            {cat.labelEn}
           </button>
         ))}
       </div>
 
-      {/* Product Grid */}
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-12">
         {filtered.map((product) => (
           <ProductCard key={product.id} product={product} />
         ))}
       </div>
+
+      {filtered.length === 0 && (
+        <p className="text-center text-muted py-20 text-sm">
+          해당 카테고리에 상품이 없습니다.
+        </p>
+      )}
     </div>
   );
 }

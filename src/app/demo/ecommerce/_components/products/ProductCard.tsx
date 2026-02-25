@@ -1,9 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
-import type { Product } from "../../_lib/types";
+import { Product } from "../../_lib/types";
 import { formatPrice } from "../../_lib/utils";
-
-const BASE_PATH = "/demo/ecommerce";
 
 interface ProductCardProps {
   product: Product;
@@ -11,7 +9,7 @@ interface ProductCardProps {
 
 export default function ProductCard({ product }: ProductCardProps) {
   return (
-    <Link href={`${BASE_PATH}/products/${product.id}`} className="group block">
+    <Link href={`/demo/ecommerce/products/${product.id}`} className="group block">
       <div className="relative aspect-[3/4] overflow-hidden bg-surface mb-4">
         <Image
           src={product.images[0]}

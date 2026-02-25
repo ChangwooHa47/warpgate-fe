@@ -7,8 +7,6 @@ import { getOrder } from "../../_data/orders";
 import { formatPrice } from "../../_lib/utils";
 import OrderTimeline from "../../_components/orders/OrderTimeline";
 
-const BASE_PATH = "/demo/ecommerce";
-
 const statusLabel: Record<string, string> = {
   confirmed: "주문 확인",
   preparing: "상품 준비 중",
@@ -27,7 +25,7 @@ export default function OrderTrackingPage() {
           주문을 찾을 수 없습니다.
         </p>
         <Link
-          href={BASE_PATH}
+          href="/demo/ecommerce"
           className="inline-block text-sm border-b border-line hover:border-primary pb-0.5 text-muted hover:text-primary transition-colors"
         >
           홈으로 돌아가기
@@ -39,7 +37,7 @@ export default function OrderTrackingPage() {
   return (
     <div className="max-w-[800px] mx-auto px-8 md:px-12 pt-16 pb-24">
       <Link
-        href={BASE_PATH}
+        href="/demo/ecommerce"
         className="inline-block text-sm text-muted hover:text-primary transition-colors mb-8"
       >
         &larr; Home

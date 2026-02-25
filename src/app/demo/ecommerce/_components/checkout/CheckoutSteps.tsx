@@ -1,4 +1,4 @@
-import type { CheckoutStep } from "../../_lib/types";
+import { CheckoutStep } from "../../_lib/types";
 import { cn } from "../../_lib/utils";
 
 const steps: { key: CheckoutStep; label: string; labelEn: string }[] = [

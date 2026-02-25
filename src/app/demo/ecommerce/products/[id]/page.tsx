@@ -8,8 +8,6 @@ import { getProduct } from "../../_data/products";
 import { useCart } from "../../_context/CartContext";
 import { formatPrice, cn } from "../../_lib/utils";
 
-const BASE_PATH = "/demo/ecommerce";
-
 export default function ProductDetailPage() {
   const params = useParams();
   const product = getProduct(params.id as string);
@@ -25,7 +23,7 @@ export default function ProductDetailPage() {
       <div className="max-w-[1200px] mx-auto px-8 md:px-12 py-32 text-center">
         <p className="text-muted">상품을 찾을 수 없습니다.</p>
         <Link
-          href={`${BASE_PATH}/products`}
+          href="/demo/ecommerce/products"
           className="inline-block mt-4 text-sm border-b border-line hover:border-primary pb-0.5 text-muted hover:text-primary transition-colors"
         >
           전체 제품으로 돌아가기
@@ -47,7 +45,7 @@ export default function ProductDetailPage() {
   return (
     <div className="max-w-[1200px] mx-auto px-8 md:px-12 pt-12 pb-24">
       <Link
-        href={`${BASE_PATH}/products`}
+        href="/demo/ecommerce/products"
         className="inline-block text-sm text-muted hover:text-primary transition-colors mb-8"
       >
         &larr; Back

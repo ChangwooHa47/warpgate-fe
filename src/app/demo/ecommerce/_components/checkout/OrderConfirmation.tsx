@@ -1,7 +1,5 @@
 import Link from "next/link";
 
-const BASE_PATH = "/demo/ecommerce";
-
 export default function OrderConfirmation() {
   const orderId = "ORD-240215-001";
 
@@ -31,13 +29,13 @@ export default function OrderConfirmation() {
 
       <div className="flex flex-col gap-3 max-w-xs mx-auto">
         <Link
-          href={`${BASE_PATH}/orders/${orderId}`}
+          href={`/demo/ecommerce/orders/${orderId}`}
           className="block w-full bg-primary text-base py-3 text-sm tracking-wider hover:bg-primary/90 transition-colors text-center"
         >
           주문 조회
         </Link>
         <Link
-          href={`${BASE_PATH}/products`}
+          href="/demo/ecommerce/products"
           className="block w-full border border-line py-3 text-sm text-muted hover:border-primary hover:text-primary transition-colors text-center"
         >
           쇼핑 계속하기

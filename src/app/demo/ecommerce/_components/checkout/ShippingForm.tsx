@@ -1,6 +1,6 @@
 "use client";
 
-import type { ShippingAddress } from "../../_lib/types";
+import { ShippingAddress } from "../../_lib/types";
 
 interface ShippingFormProps {
   address: ShippingAddress;

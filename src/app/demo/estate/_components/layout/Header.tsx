@@ -1,122 +1,80 @@
 "use client";
 
-import { useState } from "react";
 import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation";
+import { useState } from "react";
+import { SearchIcon, ListIcon } from "../ui/Icons";
 
-const BASE_PATH = "/demo/estate";
+const navItems = [
+  { href: "/demo/estate/properties", label: "매물" },
+  { href: "/demo/estate/areas", label: "지역정보" },
+  { href: "/demo/estate/consultation", label: "상담" },
+];
 
 export default function Header() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const navigation = [
-    { name: "매물 검색", href: `${BASE_PATH}/properties` },
-    { name: "지역 정보", href: `${BASE_PATH}/areas` },
-    { name: "상담 신청", href: `${BASE_PATH}/consultation` },
-  ];
+  const pathname = usePathname();
+  const router = useRouter();
+  const [query, setQuery] = useState("");
+  const isHome = pathname === "/demo/estate";
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background border-b border-border">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          {/* Logo */}
-          <Link
-            href={BASE_PATH}
-            className="flex items-center gap-2 text-xl font-bold text-primary"
-          >
-            <svg
-              className="w-8 h-8"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
-              />
-            </svg>
-            <span>부동산</span>
-          </Link>
-
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-8">
-            {navigation.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className="text-sm font-medium text-muted hover:text-primary transition-colors"
-              >
-                {item.name}
-              </Link>
-            ))}
-          </nav>
-
-          {/* Contact Button */}
-          <div className="hidden md:block">
-            <Link
-              href={`${BASE_PATH}/consultation`}
-              className="inline-flex items-center px-4 py-2 text-sm font-medium text-background bg-primary rounded-lg hover:bg-primary-dark transition-colors"
-            >
-              무료 상담
-            </Link>
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-200">
+      <div className="max-w-[1400px] mx-auto px-5 h-[56px] flex items-center gap-6">
+        <Link href="/demo/estate" className="flex items-center gap-2 shrink-0">
+          <div className="w-[28px] h-[28px] bg-primary rounded flex items-center justify-center">
+            <span className="text-white font-bold text-[13px]">한</span>
           </div>
+          <span className="text-[17px] font-bold tracking-tight">강남한결부동산</span>
+        </Link>
 
-          {/* Mobile Menu Button */}
-          <button
-            type="button"
-            className="md:hidden p-2 text-muted hover:text-primary"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
+        <nav className="hidden md:flex items-center">
+          {navItems.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className={`px-3.5 py-1.5 text-[15px] rounded transition-colors ${
+                pathname.startsWith(item.href)
+                  ? "text-primary font-semibold"
+                  : "text-gray-600 hover:text-gray-900"
+              }`}
             >
-              {isMenuOpen ? (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              ) : (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              )}
-            </svg>
+              {item.label}
+            </Link>
+          ))}
+        </nav>
+
+        {!isHome && (
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+              if (query.trim()) router.push(`/demo/estate/properties?q=${encodeURIComponent(query)}`);
+            }}
+            className="flex-1 max-w-sm hidden sm:flex items-center bg-gray-100 rounded-lg px-3 gap-2"
+          >
+            <SearchIcon className="w-4 h-4 text-gray-400 shrink-0" />
+            <input
+              type="text"
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              placeholder="지역, 아파트 검색"
+              className="flex-1 py-2 text-[15px] bg-transparent outline-none placeholder:text-gray-400"
+            />
+          </form>
+        )}
+
+        <div className="flex-1" />
+
+        <div className="flex items-center gap-2">
+          <Link
+            href="/demo/estate/consultation"
+            className="hidden sm:inline-flex px-4 py-[7px] text-[14px] font-medium border border-gray-300 text-gray-700 rounded-md hover:border-primary hover:text-primary transition-colors"
+          >
+            상담예약
+          </Link>
+          <button className="md:hidden p-1.5" aria-label="메뉴">
+            <ListIcon className="w-5 h-5" />
           </button>
         </div>
-
-        {/* Mobile Menu */}
-        {isMenuOpen && (
-          <div className="md:hidden border-t border-border py-4">
-            <nav className="flex flex-col gap-4">
-              {navigation.map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className="text-sm font-medium text-muted hover:text-primary transition-colors"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {item.name}
-                </Link>
-              ))}
-              <Link
-                href={`${BASE_PATH}/consultation`}
-                className="inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-background bg-primary rounded-lg hover:bg-primary-dark transition-colors"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                무료 상담
-              </Link>
-            </nav>
-          </div>
-        )}
       </div>
     </header>
   );

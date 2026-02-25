@@ -5,8 +5,6 @@ import { useCart } from "../_context/CartContext";
 import CartItemComponent from "../_components/cart/CartItem";
 import CartSummary from "../_components/cart/CartSummary";
 
-const BASE_PATH = "/demo/ecommerce";
-
 export default function CartPage() {
   const { items } = useCart();
 
@@ -18,7 +16,7 @@ export default function CartPage() {
           마음에 드는 제품을 담아보세요.
         </p>
         <Link
-          href={`${BASE_PATH}/products`}
+          href="/demo/ecommerce/products"
           className="inline-block text-sm border border-primary px-8 py-3 hover:bg-primary hover:text-base transition-all duration-500"
         >
           Shop

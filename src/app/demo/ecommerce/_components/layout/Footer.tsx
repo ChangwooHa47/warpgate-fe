@@ -1,96 +1,75 @@
 import Link from "next/link";
 
-const BASE_PATH = "/demo/ecommerce";
-
 export default function Footer() {
   return (
-    <footer className="bg-surface border-t border-line">
-      <div className="max-w-[1200px] mx-auto px-8 md:px-12 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-          {/* Brand */}
+    <footer className="border-t border-line mt-28">
+      <div className="max-w-[1200px] mx-auto px-8 md:px-12 py-20">
+        <div className="flex flex-col md:flex-row justify-between gap-16">
           <div>
-            <p className="text-lg tracking-[0.3em] font-light uppercase mb-4">
-              Mono
+            <p className="text-[15px] tracking-[0.25em] font-light mb-4">
+              ORDINAR
             </p>
-            <p className="text-sm text-muted leading-relaxed">
-              Minimal, thoughtful living.
+            <p className="text-[13px] text-muted leading-relaxed">
+              일상을 위한 선택.
               <br />
-              Less is more.
+              Selected for everyday life.
             </p>
           </div>
 
-          {/* Shop Links */}
-          <div>
-            <p className="text-xs tracking-wider uppercase text-muted mb-4">
-              Shop
-            </p>
-            <ul className="space-y-2.5">
-              <li>
+          <div className="flex gap-20">
+            <div>
+              <p className="text-[11px] text-muted mb-5 tracking-[0.2em] uppercase">
+                Shop
+              </p>
+              <div className="flex flex-col gap-3">
                 <Link
-                  href={`${BASE_PATH}/products`}
-                  className="text-sm text-muted hover:text-primary transition-colors"
+                  href="/demo/ecommerce/products?category=apparel"
+                  className="text-[13px] text-muted hover:text-primary transition-colors"
                 >
-                  전체 제품
+                  Apparel
                 </Link>
-              </li>
-              <li>
                 <Link
-                  href={`${BASE_PATH}/products?category=apparel`}
-                  className="text-sm text-muted hover:text-primary transition-colors"
+                  href="/demo/ecommerce/products?category=home"
+                  className="text-[13px] text-muted hover:text-primary transition-colors"
                 >
-                  의류
+                  Home
                 </Link>
-              </li>
-              <li>
                 <Link
-                  href={`${BASE_PATH}/products?category=home`}
-                  className="text-sm text-muted hover:text-primary transition-colors"
+                  href="/demo/ecommerce/products?category=desk"
+                  className="text-[13px] text-muted hover:text-primary transition-colors"
                 >
-                  홈
+                  Desk
                 </Link>
-              </li>
-              <li>
                 <Link
-                  href={`${BASE_PATH}/products?category=desk`}
-                  className="text-sm text-muted hover:text-primary transition-colors"
+                  href="/demo/ecommerce/products?category=wellness"
+                  className="text-[13px] text-muted hover:text-primary transition-colors"
                 >
-                  데스크
+                  Wellness
                 </Link>
-              </li>
-            </ul>
-          </div>
+              </div>
+            </div>
 
-          {/* Info Links */}
-          <div>
-            <p className="text-xs tracking-wider uppercase text-muted mb-4">
-              Information
-            </p>
-            <ul className="space-y-2.5">
-              <li>
+            <div>
+              <p className="text-[11px] text-muted mb-5 tracking-[0.2em] uppercase">
+                Info
+              </p>
+              <div className="flex flex-col gap-3">
                 <Link
-                  href={`${BASE_PATH}/orders`}
-                  className="text-sm text-muted hover:text-primary transition-colors"
+                  href="/demo/ecommerce/about"
+                  className="text-[13px] text-muted hover:text-primary transition-colors"
                 >
-                  주문 조회
+                  About
                 </Link>
-              </li>
-              <li>
-                <span className="text-sm text-muted">배송 안내</span>
-              </li>
-              <li>
-                <span className="text-sm text-muted">교환/반품</span>
-              </li>
-              <li>
-                <span className="text-sm text-muted">고객센터</span>
-              </li>
-            </ul>
+                <span className="text-[13px] text-muted">배송 안내</span>
+                <span className="text-[13px] text-muted">교환 · 반품</span>
+              </div>
+            </div>
           </div>
         </div>
 
-        {/* Bottom */}
-        <div className="mt-16 pt-8 border-t border-line">
-          <p className="text-xs text-muted">
-            &copy; 2024 MONO. All rights reserved.
+        <div className="mt-20 pt-8 border-t border-line">
+          <p className="text-[11px] text-muted">
+            &copy; 2024 ORDINAR. All rights reserved.
           </p>
         </div>
       </div>
