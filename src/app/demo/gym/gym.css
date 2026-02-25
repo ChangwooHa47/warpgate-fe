@@ -1,0 +1,195 @@
+/* Gym Demo - Dark fitness theme with mint accent */
+/* Scoped to [data-demo="gym"] to prevent style bleeding */
+
+@import "tailwindcss";
+
+/* Theme colors for gym demo */
+[data-demo="gym"] {
+  /* Night palette - dark backgrounds */
+  --color-night-950: #09090b;
+  --color-night-900: #18181b;
+  --color-night-800: #27272a;
+  --color-night-700: #3f3f46;
+
+  /* Steel palette - neutral text */
+  --color-steel-100: #f4f4f5;
+  --color-steel-200: #e4e4e7;
+  --color-steel-300: #d4d4d8;
+  --color-steel-400: #a1a1aa;
+  --color-steel-500: #71717a;
+
+  /* Mint palette - lime accent */
+  --color-mint-300: #bef264;
+  --color-mint-400: #a3e635;
+  --color-mint-500: #84cc16;
+  --color-mint-600: #65a30d;
+
+  /* Base styles */
+  background-color: var(--color-night-950);
+  color: var(--color-steel-300);
+}
+
+/* Utility classes */
+[data-demo="gym"] .bg-night-950 {
+  background-color: var(--color-night-950);
+}
+[data-demo="gym"] .bg-night-900 {
+  background-color: var(--color-night-900);
+}
+[data-demo="gym"] .bg-night-800 {
+  background-color: var(--color-night-800);
+}
+[data-demo="gym"] .bg-night-700 {
+  background-color: var(--color-night-700);
+}
+
+[data-demo="gym"] .text-steel-100 {
+  color: var(--color-steel-100);
+}
+[data-demo="gym"] .text-steel-200 {
+  color: var(--color-steel-200);
+}
+[data-demo="gym"] .text-steel-300 {
+  color: var(--color-steel-300);
+}
+[data-demo="gym"] .text-steel-400 {
+  color: var(--color-steel-400);
+}
+[data-demo="gym"] .text-steel-500 {
+  color: var(--color-steel-500);
+}
+
+[data-demo="gym"] .text-mint-300 {
+  color: var(--color-mint-300);
+}
+[data-demo="gym"] .text-mint-400 {
+  color: var(--color-mint-400);
+}
+[data-demo="gym"] .text-mint-500 {
+  color: var(--color-mint-500);
+}
+
+[data-demo="gym"] .bg-mint-400 {
+  background-color: var(--color-mint-400);
+}
+[data-demo="gym"] .bg-mint-500 {
+  background-color: var(--color-mint-500);
+}
+[data-demo="gym"] .bg-mint-600 {
+  background-color: var(--color-mint-600);
+}
+
+[data-demo="gym"] .border-steel-400 {
+  border-color: var(--color-steel-400);
+}
+[data-demo="gym"] .border-steel-500 {
+  border-color: var(--color-steel-500);
+}
+[data-demo="gym"] .border-night-700 {
+  border-color: var(--color-night-700);
+}
+[data-demo="gym"] .border-night-800 {
+  border-color: var(--color-night-800);
+}
+
+[data-demo="gym"] .ring-mint-500 {
+  --tw-ring-color: var(--color-mint-500);
+}
+
+/* Hover states */
+[data-demo="gym"] .hover\:bg-mint-400:hover {
+  background-color: var(--color-mint-400);
+}
+[data-demo="gym"] .hover\:bg-mint-600:hover {
+  background-color: var(--color-mint-600);
+}
+[data-demo="gym"] .hover\:bg-night-800:hover {
+  background-color: var(--color-night-800);
+}
+[data-demo="gym"] .hover\:bg-steel-100:hover {
+  background-color: var(--color-steel-100);
+}
+[data-demo="gym"] .hover\:text-mint-400:hover {
+  color: var(--color-mint-400);
+}
+[data-demo="gym"] .hover\:text-steel-100:hover {
+  color: var(--color-steel-100);
+}
+[data-demo="gym"] .hover\:border-mint-500:hover {
+  border-color: var(--color-mint-500);
+}
+
+/* Focus states */
+[data-demo="gym"] .focus\:ring-mint-500:focus {
+  --tw-ring-color: var(--color-mint-500);
+}
+[data-demo="gym"] .focus\:border-mint-500:focus {
+  border-color: var(--color-mint-500);
+}
+
+/* Group hover */
+[data-demo="gym"] .group:hover .group-hover\:text-mint-400 {
+  color: var(--color-mint-400);
+}
+
+/* Gradient */
+[data-demo="gym"] .from-night-950 {
+  --tw-gradient-from: var(--color-night-950);
+}
+[data-demo="gym"] .to-transparent {
+  --tw-gradient-to: transparent;
+}
+
+/* Custom scrollbar for dark theme */
+[data-demo="gym"] ::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+[data-demo="gym"] ::-webkit-scrollbar-track {
+  background: var(--color-night-900);
+}
+[data-demo="gym"] ::-webkit-scrollbar-thumb {
+  background: var(--color-night-700);
+  border-radius: 4px;
+}
+[data-demo="gym"] ::-webkit-scrollbar-thumb:hover {
+  background: var(--color-steel-500);
+}
+
+/* Form input styling */
+[data-demo="gym"] input,
+[data-demo="gym"] select,
+[data-demo="gym"] textarea {
+  background-color: var(--color-night-900);
+  border-color: var(--color-night-700);
+  color: var(--color-steel-100);
+}
+
+[data-demo="gym"] input::placeholder,
+[data-demo="gym"] textarea::placeholder {
+  color: var(--color-steel-500);
+}
+
+[data-demo="gym"] input:focus,
+[data-demo="gym"] select:focus,
+[data-demo="gym"] textarea:focus {
+  border-color: var(--color-mint-500);
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(132, 204, 22, 0.2);
+}
+
+/* Card reveal animation */
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+[data-demo="gym"] .animate-reveal-up {
+  animation: reveal-up 0.6s ease-out forwards;
+}
