@@ -1,0 +1,115 @@
+/* Ecommerce Demo - Scoped Design System */
+/* MUJI-inspired minimal aesthetic */
+
+[data-demo="ecommerce"] {
+  /* Color Palette */
+  --color-base: #FAFAF8;
+  --color-surface: #F5F0EB;
+  --color-line: #E8E4DF;
+  --color-primary: #2C2C2C;
+  --color-muted: #8C8578;
+  --color-accent: #A69B8D;
+
+  /* Typography */
+  --font-sans: var(--font-noto), "Noto Sans KR", -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", sans-serif;
+
+  /* Apply base styles */
+  font-family: var(--font-sans);
+  background-color: var(--color-base);
+  color: var(--color-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Tailwind v4 @theme inline equivalent */
+@layer base {
+  [data-demo="ecommerce"] {
+    --tw-color-base: var(--color-base);
+    --tw-color-surface: var(--color-surface);
+    --tw-color-line: var(--color-line);
+    --tw-color-primary: var(--color-primary);
+    --tw-color-muted: var(--color-muted);
+    --tw-color-accent: var(--color-accent);
+  }
+}
+
+/* Utility classes */
+[data-demo="ecommerce"] .bg-base {
+  background-color: var(--color-base);
+}
+
+[data-demo="ecommerce"] .bg-surface {
+  background-color: var(--color-surface);
+}
+
+[data-demo="ecommerce"] .bg-primary {
+  background-color: var(--color-primary);
+}
+
+[data-demo="ecommerce"] .bg-line {
+  background-color: var(--color-line);
+}
+
+[data-demo="ecommerce"] .text-base {
+  color: var(--color-base);
+}
+
+[data-demo="ecommerce"] .text-primary {
+  color: var(--color-primary);
+}
+
+[data-demo="ecommerce"] .text-muted {
+  color: var(--color-muted);
+}
+
+[data-demo="ecommerce"] .text-accent {
+  color: var(--color-accent);
+}
+
+[data-demo="ecommerce"] .border-line {
+  border-color: var(--color-line);
+}
+
+[data-demo="ecommerce"] .border-primary {
+  border-color: var(--color-primary);
+}
+
+[data-demo="ecommerce"] .border-accent {
+  border-color: var(--color-accent);
+}
+
+/* Hover states */
+[data-demo="ecommerce"] .hover\:bg-primary\/90:hover {
+  background-color: rgba(44, 44, 44, 0.9);
+}
+
+[data-demo="ecommerce"] .hover\:border-primary:hover {
+  border-color: var(--color-primary);
+}
+
+[data-demo="ecommerce"] .hover\:text-primary:hover {
+  color: var(--color-primary);
+}
+
+[data-demo="ecommerce"] .hover\:border-accent:hover {
+  border-color: var(--color-accent);
+}
+
+/* Focus states */
+[data-demo="ecommerce"] .focus\:border-primary:focus {
+  border-color: var(--color-primary);
+}
+
+/* Disabled states */
+[data-demo="ecommerce"] .disabled\:bg-line:disabled {
+  background-color: var(--color-line);
+}
+
+[data-demo="ecommerce"] .disabled\:text-muted:disabled {
+  color: var(--color-muted);
+}
+
+/* Radio accent color */
+[data-demo="ecommerce"] .accent-\[\#2C2C2C\] {
+  accent-color: #2C2C2C;
+}
