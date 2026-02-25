@@ -1,0 +1,184 @@
+/* Pro-specific design tokens and styles */
+
+:root {
+  /* Pro Color Palette */
+  --pro-bg-normal: #0f0f13;
+  --pro-bg-elevated: #1a1a22;
+  --pro-bg-surface: rgba(255, 255, 255, 0.05);
+
+  /* Pro Text Colors */
+  --pro-text-normal: #ffffff;
+  --pro-text-neutral: #e5e5e5;
+  --pro-text-assistive: #8b8b8b;
+  --pro-text-disabled: #5a5a5a;
+
+  /* Pro Accent Colors */
+  --pro-primary: #6366f1;
+  --pro-primary-hover: #818cf8;
+  --pro-secondary: #22c55e;
+  --pro-warning: #f59e0b;
+  --pro-error: #ef4444;
+
+  /* Pro Gradients */
+  --pro-gradient-primary: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  --pro-gradient-border: linear-gradient(180deg, rgba(100, 103, 122, 1) 0%, rgba(49, 51, 62, 1) 100%);
+  --pro-gradient-card: linear-gradient(180deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 100%);
+
+  /* Pro Shadows */
+  --pro-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --pro-shadow-md: 0 4px 6px rgba(0, 0, 0, 0.4);
+  --pro-shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.5);
+  --pro-shadow-glow: 0 0 20px rgba(99, 102, 241, 0.3);
+}
+
+/* Pro-specific utility classes */
+.pro-gradient-text {
+  background: var(--pro-gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.pro-gradient-border {
+  position: relative;
+}
+
+.pro-gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  padding: 1.5px;
+  border-radius: inherit;
+  background: var(--pro-gradient-border);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.pro-card {
+  background: var(--pro-gradient-card);
+  border-radius: 1rem;
+  backdrop-filter: blur(10px);
+}
+
+.pro-glow {
+  box-shadow: var(--pro-shadow-glow);
+}
+
+/* Pro Typography */
+.pro-heading-xl {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.pro-heading-lg {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.pro-heading-md {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 600;
+  letter-spacing: -0.0175em;
+  line-height: 1.3;
+}
+
+.pro-body-lg {
+  font-size: 1.25rem;
+  font-weight: 400;
+  letter-spacing: -0.0175em;
+  line-height: 1.6;
+}
+
+.pro-body-md {
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: -0.0175em;
+  line-height: 1.5;
+}
+
+/* Pro Animations */
+@keyframes pro-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pro-pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes pro-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.pro-animate-fade-in {
+  animation: pro-fade-in 0.5s ease-out forwards;
+}
+
+.pro-animate-pulse {
+  animation: pro-pulse 2s ease-in-out infinite;
+}
+
+.pro-animate-spin {
+  animation: pro-spin 1s linear infinite;
+}
+
+/* Pro Interactive States */
+.pro-interactive {
+  transition: all 0.2s ease;
+}
+
+.pro-interactive:hover {
+  transform: translateY(-2px);
+}
+
+.pro-interactive:active {
+  transform: translateY(0);
+}
+
+/* Pro Focus Styles */
+.pro-focus-ring:focus-visible {
+  outline: 2px solid var(--pro-primary);
+  outline-offset: 2px;
+}
+
+/* Pro scrollbar */
+.pro-scrollbar::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.pro-scrollbar::-webkit-scrollbar-track {
+  background: var(--pro-bg-elevated);
+  border-radius: 4px;
+}
+
+.pro-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+}
+
+.pro-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}

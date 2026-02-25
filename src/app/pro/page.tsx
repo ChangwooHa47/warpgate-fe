@@ -1,24 +1,67 @@
+import { ProHero } from './_components/pro';
+import { Container } from './_components/shared';
+import { Section } from './_components/shared';
+
 export default function ProPage() {
   return (
-    <main className="min-h-screen flex flex-col items-center justify-center p-8 bg-gradient-to-br from-neutral-900 to-neutral-800">
-      <h1 className="text-4xl font-bold mb-4 text-white">WarpGate Pro</h1>
-      <p className="text-lg text-neutral-400 mb-8">
-        Placeholder for Pro version
-      </p>
-      <nav className="flex gap-4">
-        <a
-          href="/"
-          className="px-6 py-3 bg-white text-neutral-900 rounded-lg hover:bg-neutral-100 transition-colors"
-        >
-          View Lite
-        </a>
-        <a
-          href="/demo"
-          className="px-6 py-3 border border-neutral-600 text-white rounded-lg hover:bg-neutral-700 transition-colors"
-        >
-          Browse Demos
-        </a>
-      </nav>
-    </main>
+    <>
+      <ProHero />
+
+      {/* Features Section */}
+      <Section id="features" className="bg-gray-900">
+        <Container>
+          <div className="text-center">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              Features
+            </h2>
+            <p className="text-gray-400 max-w-2xl mx-auto">
+              Coming soon...
+            </p>
+          </div>
+        </Container>
+      </Section>
+
+      {/* Pricing Section */}
+      <Section id="pricing" className="bg-bg-normal">
+        <Container>
+          <div className="text-center">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              Pricing
+            </h2>
+            <p className="text-gray-400 max-w-2xl mx-auto">
+              Coming soon...
+            </p>
+          </div>
+        </Container>
+      </Section>
+
+      {/* Enterprise Section */}
+      <Section id="enterprise" className="bg-gray-900">
+        <Container>
+          <div className="text-center">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              Enterprise
+            </h2>
+            <p className="text-gray-400 max-w-2xl mx-auto">
+              Coming soon...
+            </p>
+          </div>
+        </Container>
+      </Section>
+
+      {/* Contact Section */}
+      <Section id="contact" className="bg-bg-normal">
+        <Container>
+          <div className="text-center">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              Contact
+            </h2>
+            <p className="text-gray-400 max-w-2xl mx-auto">
+              Coming soon...
+            </p>
+          </div>
+        </Container>
+      </Section>
+    </>
   );
 }

@@ -1,21 +1,106 @@
 @import "tailwindcss";
 
-/*
- * WarpGate Base Styles
- *
- * This file contains ONLY the minimal base styles for Lite/Pro.
- * Demo-specific styles are loaded via segment-level imports
- * in each demo's layout.tsx to ensure CSS isolation.
- */
+:root {
+  /* ========================================
+     WarpGate Pro Design System
+     ======================================== */
 
-@layer base {
-  :root {
-    --wg-bg: #ffffff;
-    --wg-fg: #171717;
-  }
+  /* Primary - Warpgate Blue */
+  --primary: #9FCEFE;
 
-  body {
-    background-color: var(--wg-bg);
-    color: var(--wg-fg);
-  }
+  /* Background */
+  --bg-normal: #0E0E0E;
+  --bg-elevated: rgba(14, 14, 14, 0.5);
+
+  /* Grayscale */
+  --gray-black: #0E0E0E;
+  --gray-900: #121316;
+  --gray-850: #17181C;
+  --gray-800: #1C1C22;
+  --gray-700: #25262D;
+  --gray-600: #373943;
+  --gray-500: #494B5A;
+  --gray-400: #5C5F70;
+  --gray-350: #73768C;
+  --gray-300: #8F92A3;
+  --gray-200: #ABADBA;
+  --gray-100: #C7C8D1;
+  --gray-white: #FFFFFF;
+
+  /* Text (Label) Semantic Tokens */
+  --text-normal: var(--gray-white);
+  --text-neutral: var(--gray-200);
+  --text-alternative: var(--gray-300);
+  --text-assistive: var(--gray-400);
+  --text-disable: var(--gray-600);
+
+  /* Line Semantic Tokens */
+  --line-strong: var(--gray-300);
+  --line-normal: var(--gray-500);
+  --line-neutral: var(--gray-600);
+  --line-alternative: var(--gray-700);
+
+  /* Component */
+  --component-card: rgba(28, 28, 34, 0.6);
+
+  /* Legacy mappings */
+  --background: var(--bg-normal);
+  --foreground: var(--gray-white);
+}
+
+@theme inline {
+  /* Font Size Scale (Figma -2px) */
+  --font-size-xs: 0.625rem;      /* 10px (Figma 12px - 2) */
+  --font-size-sm: 0.75rem;       /* 12px (Figma 14px - 2) */
+  --font-size-base: 0.875rem;    /* 14px (Figma 16px - 2) */
+  --font-size-lg: 1rem;          /* 16px (Figma 18px - 2) */
+  --font-size-xl: 1.125rem;      /* 18px (Figma 20px - 2) */
+  --font-size-2xl: 1.375rem;     /* 22px (Figma 24px - 2) */
+  --font-size-3xl: 1.625rem;     /* 26px (Figma 28px - 2) */
+  --font-size-4xl: 1.875rem;     /* 30px (Figma 32px - 2) */
+  --font-size-5xl: 2.125rem;     /* 34px (Figma 36px - 2) */
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+
+  /* Grayscale */
+  --color-gray-black: var(--gray-black);
+  --color-gray-900: var(--gray-900);
+  --color-gray-850: var(--gray-850);
+  --color-gray-800: var(--gray-800);
+  --color-gray-700: var(--gray-700);
+  --color-gray-600: var(--gray-600);
+  --color-gray-500: var(--gray-500);
+  --color-gray-400: var(--gray-400);
+  --color-gray-350: var(--gray-350);
+  --color-gray-300: var(--gray-300);
+  --color-gray-200: var(--gray-200);
+  --color-gray-100: var(--gray-100);
+  --color-gray-white: var(--gray-white);
+
+  /* Semantic Text */
+  --color-text-normal: var(--text-normal);
+  --color-text-neutral: var(--text-neutral);
+  --color-text-alternative: var(--text-alternative);
+  --color-text-assistive: var(--text-assistive);
+  --color-text-disable: var(--text-disable);
+
+  /* Semantic Line */
+  --color-line-strong: var(--line-strong);
+  --color-line-normal: var(--line-normal);
+  --color-line-neutral: var(--line-neutral);
+  --color-line-alternative: var(--line-alternative);
+
+  /* Component */
+  --color-component-card: var(--component-card);
+
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
 }
