@@ -1,0 +1,152 @@
+@import "tailwindcss";
+
+/**
+ * Accounting Demo Styles - ISOLATED
+ *
+ * ALL styles are scoped to [data-demo="accounting"] to prevent
+ * bleeding to Lite/Pro or other demos.
+ *
+ * CSS Isolation Strategy:
+ * 1. Theme variables via @theme for navy/accent/slate color palette
+ * 2. Element styles are scoped to [data-demo="accounting"]
+ * 3. Custom animations are prefixed with accounting-
+ */
+
+@theme inline {
+  /* ── Typography ── */
+  --font-sans: "Pretendard Variable", "Pretendard", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+
+  /* ── Color palette: Navy / Accent Blue / Slate ── */
+  --color-navy-50: #f0f3f8;
+  --color-navy-100: #d9e1ed;
+  --color-navy-200: #b3c3db;
+  --color-navy-300: #8da5c9;
+  --color-navy-400: #6787b7;
+  --color-navy-500: #4169a5;
+  --color-navy-600: #345484;
+  --color-navy-700: #273f63;
+  --color-navy-800: #1a2a42;
+  --color-navy-900: #0d1829;
+
+  --color-accent-50: #e3f2fd;
+  --color-accent-100: #bbdefb;
+  --color-accent-200: #90caf9;
+  --color-accent-300: #64b5f6;
+  --color-accent-400: #42a5f5;
+  --color-accent-500: #2196f3;
+  --color-accent-600: #1e88e5;
+  --color-accent-700: #1976d2;
+  --color-accent-800: #1565c0;
+  --color-accent-900: #0d47a1;
+
+  --color-slate-50: #f8fafc;
+  --color-slate-100: #f1f5f9;
+  --color-slate-200: #e2e8f0;
+  --color-slate-300: #cbd5e1;
+  --color-slate-400: #94a3b8;
+  --color-slate-500: #64748b;
+  --color-slate-600: #475569;
+  --color-slate-700: #334155;
+  --color-slate-800: #1e293b;
+  --color-slate-900: #0f172a;
+}
+
+/* Scoped to accounting demo only */
+[data-demo="accounting"] {
+  background-color: var(--color-slate-50);
+  color: var(--color-navy-900);
+  font-family: "Pretendard Variable", "Pretendard", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  scroll-behavior: smooth;
+}
+
+/* Scrollbar - scoped */
+[data-demo="accounting"]::-webkit-scrollbar {
+  width: 6px;
+}
+
+[data-demo="accounting"]::-webkit-scrollbar-track {
+  background: var(--color-slate-100);
+}
+
+[data-demo="accounting"]::-webkit-scrollbar-thumb {
+  background: var(--color-slate-400);
+  border-radius: 3px;
+}
+
+/* Selection - scoped */
+[data-demo="accounting"] ::selection {
+  background-color: var(--color-accent-200);
+  color: var(--color-navy-900);
+}
+
+/* Focus - scoped */
+[data-demo="accounting"] :focus-visible {
+  outline: 2px solid var(--color-accent-500);
+  outline-offset: 2px;
+}
+
+/* Animations - scoped with prefixed keyframes */
+@keyframes accountingFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes accountingFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes accountingSlideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+[data-demo="accounting"] .animate-fade-up {
+  animation: accountingFadeUp 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+[data-demo="accounting"] .animate-fade-in {
+  animation: accountingFadeIn 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+[data-demo="accounting"] .animate-slide-down {
+  animation: accountingSlideDown 0.3s ease-out forwards;
+}
+
+/* Animation delays */
+[data-demo="accounting"] .animate-delay-1 {
+  animation-delay: 0.2s;
+}
+
+[data-demo="accounting"] .animate-delay-2 {
+  animation-delay: 0.4s;
+}
+
+[data-demo="accounting"] .animate-delay-3 {
+  animation-delay: 0.6s;
+}
+
+[data-demo="accounting"] .animate-delay-4 {
+  animation-delay: 0.8s;
+}
