@@ -1,0 +1,27 @@
+# WarpGate Frontend - Railway Configuration
+#
+# Deployment environments:
+# - main branch -> Development (warpgate-dev)
+# - staging branch -> Staging (warpgate-staging)
+# - production branch -> Production (warpgate-prod)
+#
+# Demo sites available at:
+# - /demo/estate - 부동산 매물 데모 (강남/서초 지역)
+# - /demo/ecommerce - 이커머스 쇼핑몰 데모
+# - /demo/gym - 피트니스 센터 데모
+# - /demo/hospital - 병원 데모
+# - /demo/lawfirm - 법률사무소 데모
+# - /demo/mall - 백화점 데모
+# - /demo/hagwon - 학원 데모
+# - /demo/nailshop - 네일샵 데모
+
+[build]
+builder = "nixpacks"
+buildCommand = "npm run build"
+
+[deploy]
+startCommand = "npm run start"
+healthcheckPath = "/"
+healthcheckTimeout = 300
+restartPolicyType = "ON_FAILURE"
+restartPolicyMaxRetries = 10
