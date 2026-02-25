@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+/*
+ * WarpGate Base Styles
+ *
+ * This file contains ONLY the minimal base styles for Lite/Pro.
+ * Demo-specific styles are loaded via segment-level imports
+ * in each demo's layout.tsx to ensure CSS isolation.
+ */
+
+@layer base {
+  :root {
+    --wg-bg: #ffffff;
+    --wg-fg: #171717;
+  }
+
+  body {
+    background-color: var(--wg-bg);
+    color: var(--wg-fg);
+  }
+}

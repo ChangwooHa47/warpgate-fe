@@ -1,0 +1,125 @@
+@import "tailwindcss";
+@import "pretendard/dist/web/variable/pretendardvariable-dynamic-subset.css";
+
+/**
+ * Restaurant Demo Styles - ISOLATED
+ *
+ * ALL styles are scoped to [data-demo="restaurant"] to prevent
+ * bleeding to Lite/Pro or other demos.
+ *
+ * CSS Isolation Strategy:
+ * 1. Theme variables via @theme are global but prefixed with restaurant colors
+ * 2. Element styles are scoped to [data-demo="restaurant"]
+ * 3. Custom animations are prefixed with restaurant-
+ */
+
+@theme inline {
+  /* ── Typography ── */
+  --font-sans: "Pretendard Variable", "Pretendard", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --font-logo: var(--font-gowun), "Gowun Batang", serif;
+
+  /* ── Color palette: ivory / stone / charcoal ── */
+  --color-ivory-50: #FEFDFB;
+  --color-ivory-100: #FAF8F4;
+  --color-ivory-200: #F5F1EA;
+  --color-ivory-300: #EDE8DD;
+
+  --color-stone-100: #E8E3D9;
+  --color-stone-200: #D4CFC4;
+  --color-stone-300: #B8B1A3;
+  --color-stone-400: #A39B8B;
+  --color-stone-500: #8A8275;
+  --color-stone-600: #6E675C;
+
+  --color-charcoal-400: #52504B;
+  --color-charcoal-500: #3D3B37;
+  --color-charcoal-600: #2C2A26;
+  --color-charcoal-700: #1F1E1B;
+  --color-charcoal-800: #141310;
+
+  --color-warm-500: #8B7355;
+  --color-warm-600: #73603F;
+}
+
+/* Scoped to restaurant demo only */
+[data-demo="restaurant"] {
+  background-color: #FEFDFB;
+  color: #2C2A26;
+  font-family: "Pretendard Variable", "Pretendard", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  scroll-behavior: smooth;
+}
+
+/* Scrollbar - scoped */
+[data-demo="restaurant"]::-webkit-scrollbar {
+  width: 6px;
+}
+
+[data-demo="restaurant"]::-webkit-scrollbar-track {
+  background: #FEFDFB;
+}
+
+[data-demo="restaurant"]::-webkit-scrollbar-thumb {
+  background: #D4CFC4;
+  border-radius: 3px;
+}
+
+/* Selection - scoped */
+[data-demo="restaurant"] ::selection {
+  background-color: #D4CFC4;
+  color: #1F1E1B;
+}
+
+/* Focus - scoped */
+[data-demo="restaurant"] :focus-visible {
+  outline: 2px solid #8B7355;
+  outline-offset: 2px;
+}
+
+/* Animations - scoped with prefixed keyframes */
+@keyframes restaurantSlideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes restaurantSlideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes restaurantSlideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+[data-demo="restaurant"] .animate-slide-down {
+  animation: restaurantSlideDown 0.2s ease-out;
+}
+
+[data-demo="restaurant"] .animate-slide-in-right {
+  animation: restaurantSlideInRight 0.3s ease-out;
+}
+
+[data-demo="restaurant"] .animate-slide-in-left {
+  animation: restaurantSlideInLeft 0.3s ease-out;
+}
