@@ -1,0 +1,120 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css");
+@import "tailwindcss";
+
+@theme inline {
+  --color-navy-50: #f0f3f8;
+  --color-navy-100: #d9e0ed;
+  --color-navy-200: #b3c1db;
+  --color-navy-300: #8da2c9;
+  --color-navy-400: #6783b7;
+  --color-navy-500: #4a6a9e;
+  --color-navy-600: #3a5580;
+  --color-navy-700: #2a3f60;
+  --color-navy-800: #1a2940;
+  --color-navy-900: #0d1829;
+  --color-navy-950: #060c14;
+
+  --color-gold-50: #fdf9f0;
+  --color-gold-100: #f8edd3;
+  --color-gold-200: #f0d9a6;
+  --color-gold-300: #e8c579;
+  --color-gold-400: #d4a84a;
+  --color-gold-500: #b8923a;
+  --color-gold-600: #96762f;
+
+  --color-slate-50: #f8f9fa;
+  --color-slate-100: #f1f3f5;
+  --color-slate-200: #e9ecef;
+  --color-slate-300: #dee2e6;
+  --color-slate-400: #adb5bd;
+  --color-slate-500: #6c757d;
+  --color-slate-600: #495057;
+  --color-slate-700: #343a40;
+  --color-slate-800: #212529;
+
+  --font-serif: "Pretendard Variable", Pretendard;
+  --font-sans: "Pretendard Variable", Pretendard;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #f8f9fa;
+  color: #343a40;
+  font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f8f9fa;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #adb5bd;
+  border-radius: 3px;
+}
+
+/* Selection */
+::selection {
+  background-color: #d4a84a;
+  color: #060c14;
+}
+
+/* Custom animations */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fadeUp 0.8s ease-out forwards;
+}
+
+.animate-fade-in {
+  animation: fadeIn 1s ease-out forwards;
+}
+
+.animate-slide-down {
+  animation: slideDown 0.3s ease-out forwards;
+}
+
+.animate-delay-1 { animation-delay: 0.2s; }
+.animate-delay-2 { animation-delay: 0.4s; }
+.animate-delay-3 { animation-delay: 0.6s; }
+
+/* Divider */
+.divider {
+  width: 40px;
+  height: 1px;
+  background-color: #d4a84a;
+}
